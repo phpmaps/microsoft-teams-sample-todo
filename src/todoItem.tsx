@@ -64,7 +64,7 @@ export class TodoItem extends React.Component<ITodoItemProps, ITodoItemState> {
      */
     public componentDidUpdate(prevProps: ITodoItemProps) {
         if (!prevProps.editing && this.props.editing) {
-            var node = ReactDOM.findDOMNode<HTMLInputElement>(this.refs["editField"]);
+            var node = ReactDOM.findDOMNode(this.refs["editField"]) as HTMLInputElement;
             node.focus();
             node.setSelectionRange(node.value.length, node.value.length);
         }
